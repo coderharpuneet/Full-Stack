@@ -152,11 +152,15 @@ for(let i=0;i<3;i++){
 1 3
 1 3 6
 */
-// console.log("Pattern 9");
-// for(let i=0;i<3;i++){
-//     for(let j=0;j<=i;j++){
-// }
-// }
+console.log("Pattern 9");
+
+for(let i=1;i<=3;i++){
+    var sum=0;
+    for(let j=1;j<=i;j++){
+        sum=sum+j;
+        console.log(sum);
+}
+}
 
 
 
