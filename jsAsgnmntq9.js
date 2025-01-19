@@ -121,3 +121,65 @@ console.log("Pattern 7");
 for(let i=0;i<3;i++){
      
 }
+
+
+
+
+
+
+/*
+1
+1 0
+1 0 1
+*/
+console.log("Pattern 8");
+for(let i=0;i<3;i++){
+    for(let j=0;j<=i;j++){
+        if(j%2==0){
+            console.log(1);
+        }
+        else{
+            console.log(0);
+        }
+    }
+}
+
+
+
+
+/*
+1
+1 3
+1 3 6
+*/
+// console.log("Pattern 9");
+// for(let i=0;i<3;i++){
+//     for(let j=0;j<=i;j++){
+// }
+// }
+
+
+
+
+
+/*
+1
+2 
+3 4 5
+*/
+console.log("Pattern 10");
+let k = 1;
+for (let i = 0; i < 3; i++) {
+    if (i <= 1) {
+        for (let j = 0; j <= 0; j++) {
+            console.log(k);
+            k++;
+        }
+    } 
+    else {
+        for (let j = 0; j <= i; j++) {
+            console.log(k);
+            k++;
+        }
+    }
+}
