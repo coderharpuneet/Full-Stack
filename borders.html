@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .solid-border,.dashed-border,.dotted-border,.double-border,.rounded-border,.custom-border{
+            width: 250px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+
+        }
+        .solid-border{
+            border: 2px solid blue;
+        }
+        .dashed-border{
+            border: 2px dashed green;
+        }
+        .dotted-border{
+            border: 2px dotted red;
+        }
+        .double-border{
+            border: 4px double yellow;
+        }
+        .rounded-border{
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        .custom-border{
+            border-left: 4px solid lightgreen;
+            border-right: 4px solid orange;
+            border-top: 2px solid violet;
+            border-bottom: 2px solid violet;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="solid-border">
+        <p>Solid Border</p>
+    </div>
+    <div class="dashed-border">
+        <p>Dashed Border</p>
+    </div>
+    <div class="dotted-border">
+        <p>Dotted Border</p>
+    </div>
+    <div class="double-border">
+        <p>Double Border</p>
+    </div>
+    <div class="rounded-border">
+        <p>Rounded Border</p>
+    </div>
+    <div class="custom-border">
+        <p>Custom Border</p>
+    </div>
+</body>
+</html>
