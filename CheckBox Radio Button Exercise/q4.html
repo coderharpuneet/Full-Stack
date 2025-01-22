@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Choose your Course</h3>
+    <input type="radio" name="course" id="ba" onclick="show()">B.A.
+    <input type="radio" name="course" id="bsc" onclick="show()">B.sc.
+    <input type="radio" name="course" id="btech" onclick="show()">B.Tech.
+    <input type="radio" name="course" id="bca" onclick="show()">BCA
+
+    <div id="fees"></div>
+    <div id="floor"></div>
+
+    <script>
+        function show(){
+            if(ba.checked){
+                fees.innerHTML="B.A. Fees: ₹55,000";
+                floor.innerHTML="B.A. Floor: 1st";
+            }
+            if(bsc.checked){
+                fees.innerHTML="B.sc. Fees: ₹65,000";
+                floor.innerHTML="B.sc. Floor: 2nd";
+            }
+            if(btech.checked){
+                fees.innerHTML="B.Tech. Fees: ₹1,00,000";
+                floor.innerHTML="B.Tech. Floor: Ground";
+            }
+            if(bca.checked){
+                fees.innerHTML="BCA Fees: ₹85,000";
+                floor.innerHTML="BCA Floor: 3rd";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>12th Percentage</h2>
+
+    <input type="radio" name="course" id="ncc" onclick="show()">NCC
+    <input type="radio" name="course" id="nss" onclick="show()">NSS
+
+
+    <input type="text" name="" id="percentage" placeholder="Enter your 12th Percentage">
+
+    <div id="finalPer"></div>
+
+
+    <script>
+        function show(){
+            let percentage = document.getElementById("percentage").value;
+            if(ncc.checked){
+                percentage=parseInt(percentage)+2;
+                finalPer.innerHTML="Your final Percentage is: "+percentage;
+            }
+            if(nss.checked){
+                percentage=parseInt(percentage)+3;
+                finalPer.innerHTML="Your final Percentage is: "+percentage;
+            }
+        }
+
+    </script>
+</body>
+</html>

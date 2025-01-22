@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Example of CheckBox</h3>
+    <p>Choose Banking Service(per service ₹20)</p>
+    <input type="checkbox" name="" id="cc" onclick="show()">Credit Card
+    <input type="checkbox" name="" id="dc" onclick="show()">Debit Card
+    <input type="checkbox" name="" id="sc" onclick="show()">Shopping Card
+    <p id="msg"></p>
+
+    <script>
+        
+        function show(){
+            var bill=0;
+            var list="<ol>";
+            if(cc.checked){ 
+                bill+=20;
+                list+="<li>Credit Card"; 
+        }
+            if(dc.checked){
+                bill+=20
+                list+="<li>Debit Card";
+                }
+            if(sc.checked) {
+                bill+=20;
+                list+="<li>Shopping Card";
+                }
+            msg.innerHTML=list;
+            msg.innerHTML+="Bill= "+bill;
+        }
+        
+    </script>
+</body>
+</html>

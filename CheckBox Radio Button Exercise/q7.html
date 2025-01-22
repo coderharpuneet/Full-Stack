@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Shopping Cart</h2>
+
+
+    <div class="items">
+        <input type="checkbox" name="" id="tshirt" >U.S. Polo Assn. Tshirt (₹2,000)
+        <br>
+        <input type="checkbox" name="" id="shoe" >Nike Shoes (₹7,000)
+        <br>
+        <input type="checkbox" name="" id="hat" >Hat (₹1,000)
+    </div>
+
+    <br><br><br><br><br>
+
+    <input type="radio" name="pay" id="cod" >Cah On Delivery
+    <br>
+    <input type="radio" name="pay" id="online" >Online Payment
+
+    <br>
+    <input type="button" value="Proceed" id="submit" onclick="show()">
+
+    <div id="details">
+        <div id="purchasedItem"></div>
+        <div id="paymentMethod"></div>
+    </div>
+
+    <script>
+        var bill=0;
+        function payMethod(){
+            if(cod.checked){
+                bill+=50;
+                PaymentMethod.innerHTML="You will do Cash On Delivery";;
+            }
+            if(online.checked){
+                bill+=0;
+                PaymentMethod.innerHTML="You will pay Online";
+            }
+            
+        }
+        function calcBill(){
+            var list="<ol>";
+            if(tshirt.checked){
+                bill+=2000;
+                list+="<li>U.S. Polo Assn. Tshirt";
+            }
+            if(shoe.checked){
+                bill+=7000;
+                list+="<li>Nike Shoes";
+            }
+            if(hat.checked){
+                bill+=1000;
+                list+="<li>Hat";
+            }
+            purchasedItem.innerHTML="You have purchased "+list+"  and your bill is "+bill;
+            
+            payMethod();
+        }
+        function show(){
+            calcBill();
+            purchasedItem.innerHTML="You have purchased "+list+"  and your bill is "+bill;
+            payMethod();
+        }
+
+    </script>
+</body>
+</html>

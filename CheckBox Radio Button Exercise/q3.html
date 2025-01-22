@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Example of Radio button</h2>
+
+    <input type="radio" name="clr" id="blue" onclick="show()">blue
+    <input type="radio" name="clr" id="green" onclick="show()">green
+    <input type="radio" name="clr" id="red" onclick="show()">red
+
+
+    <script>
+        function show(){
+            if(red.checked){
+                document.bgColor="red";
+                document.fgColor="white";
+            } 
+            if(green.checked){
+                document.bgColor="green";
+                document.fgColor="black";
+            }
+            if(blue.checked){
+                document.bgColor="blue";
+                document.fgColor="white";
+            }
+        }
+    </script>
+</body>
+</html>

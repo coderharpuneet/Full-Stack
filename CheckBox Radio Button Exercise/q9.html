@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Country's Capitals</h2>
+
+
+    <input type="radio" name="match" id="Array" onclick="show()">Array
+    <br>
+    <input type="radio" name="match" id="IF" onclick="show()">IF
+    <br>
+    <input type="radio" name="match" id="let" onclick="show()">LET
+    
+    <br>
+
+    <div id="capital"></div>
+
+
+
+    <script>
+        function show(){
+            if(Array.checked){
+                capital.innerHTML = "STarts with 0";
+            }
+            if(IF.checked){
+                capital.innerHTML = "Else";
+            }
+            if(let.checked){
+                capital.innerHTML = "Declare Variables";
+            }
+            
+        }
+    </script>
+</body>
+</html>

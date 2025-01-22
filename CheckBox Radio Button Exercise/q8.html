@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Country's Capitals</h2>
+
+
+    <input type="radio" name="country" id="india" onclick="show()">India
+    <br>
+    <input type="radio" name="country" id="Australia" onclick="show()">Australia
+    <br>
+    <input type="radio" name="country" id="SriLanka" onclick="show()">Sri Lanka
+    <br>
+    <input type="radio" name="country" id="Canada" onclick="show()">Canada
+    <br>
+
+    <div id="capital"></div>
+
+
+
+    <script>
+        function show(){
+            if(india.checked){
+                capital.innerHTML = "Capital of India is New Delhi";
+            }
+            if(Australia.checked){
+                capital.innerHTML = "Capital of Australia is Canberra";
+            }
+            if(SriLanka.checked){
+                capital.innerHTML = "Capital of Sri Lanka is Colombo";
+            }
+            if(Canada.checked){
+                capital.innerHTML = "Capital of Canada is Ottawa";
+            }
+        }
+    </script>
+</body>
+</html>
