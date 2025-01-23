@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admission in CTU</h1>
+
+
+    <label>Select Course</label>
+    <select id="course" onchange="show_subject()">
+        <option >Select any One</option>
+    </select>
+<br><br><br><br><br>
+
+    <label>Select Subjects</label>
+    <select id="subject">
+        <option>Select any One</option>
+    </select>
+
+
+    <br><br><br><br><br>
+    <label>Duration</label> <input type="text" placeholder="Duration" id="duration">
+    <br><br>
+    <label>Fees</label> <input type="text" placeholder="Fees" id="fees">
+
+    <script>
+        window.onload=show_course
+
+        function show_course(){
+            course.innerHTML+='<option  id="BCA">BCA</option><option  id="MCA">MCA</option>'
+        }
+        function show_subject(){
+            subject.innerHTML='<option >Select any One</option>'
+            if(course.value==='BCA'){
+                subject.innerHTML+='<option  id="Python">Python</option><option  id="ML">ML</option>'
+                duration.value="3 years";
+                fees.value="50k per year"
+            }
+            if(course.selectedIndex==2){
+                subject.innerHTML+='<option  id="Java">Java</option><option  id="DBMS">DBMS</option>'
+                duration.value="2 years";
+                fees.value="70k per year"
+            }
+        }
+    </script>
+</body>
+</html>
