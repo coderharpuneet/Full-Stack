@@ -1,0 +1,104 @@
+<!-- Q.3  const questions = [
+      {
+        question: "What is the capital of France?",
+        options: ["Berlin", "Madrid", "Paris", "Rome"],
+        answer: "Paris"
+      },
+      {
+        question: "Which is the largest planet in our solar system?",
+        options: ["Earth", "Jupiter", "Mars", "Saturn"],
+        answer: "Jupiter"
+      },
+      {
+        question: "Who wrote 'Hamlet'?",
+        options: ["Charles Dickens", "William Shakespeare", "Mark Twain", "Jane Austen"],
+        answer: "William Shakespeare"
+      }
+    ];
+      
+    
+    Using these JSON format, Show question in a Label /Para / Heading and 4 option button  only. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Quiz</h2>
+    <hr>
+    <p id="ques"></p>
+    <br>
+    <input type="radio" name="q" id="opt1"><label id="l1"></label>
+    <br>
+    <input type="radio" name="q" id="opt2" ><label id="l2"></label>
+    <br>
+    <input type="radio" name="q" id="opt3"><label id="l3"></label>
+    <br>
+    <input type="radio" name="q" id="opt4"><label id="l4"></label>
+
+
+    <br><br><br>
+    <input type="button" value="Check answer" onclick="check()">
+    <input type="button" value="Next" onclick="next()">
+
+    <p id="msg">Hello</p>
+    <script>
+        const questions = [
+      {
+        question: "What is the capital of France?",
+        options: ["Berlin", "Madrid", "Paris", "Rome"],
+        answer: "Paris"
+      },
+      {
+        question: "Which is the largest planet in our solar system?",
+        options: ["Earth", "Jupiter", "Mars", "Saturn"],
+        answer: "Jupiter"
+      },
+      {
+        question: "Who wrote 'Hamlet'?",
+        options: ["Charles Dickens", "William Shakespeare", "Mark Twain", "Jane Austen"],
+        answer: "William Shakespeare"
+      }
+    ];
+    var index=0;
+    ques.innerHTML=questions[index].question;
+    l1.innerHTML=questions[index].options[0];
+    l2.innerHTML=questions[index].options[1];
+    l3.innerHTML=questions[index].options[2];
+    l4.innerHTML=questions[index].options[3];
+    function next(){
+        index++;
+        ques.innerHTML=questions[index].question;
+        l1.innerHTML=questions[index].options[0];
+        l2.innerHTML=questions[index].options[1];
+        l3.innerHTML=questions[index].options[2];
+        l4.innerHTML=questions[index].options[3];
+    }
+    function check(){
+        
+        if(opt1.checked && l1.innerHTML===questions[index].answer ){
+            
+            msg.innerHTML="Correct Answer";
+        }
+    
+    
+        else if(opt2.checked && l2.innerHTML===questions[index].answer ){
+            msg.innerHTML="Correct Answer";}
+    
+        else if(opt3.checked && l3.innerHTML===questions[index].answer ){
+            msg.innerHTML="Correct Answer";}
+    
+        else if(opt4.checked && l4.innerHTML===questions[index].answer ){
+            msg.innerHTML="Correct Answer";}
+            else{
+                msg.innerHTML="Wrong Answer";
+            }
+        
+    }
+    </script>
+</body>
+</html>
