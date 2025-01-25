@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card-container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            
+        }
+        .card{
+            width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: white;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+        .card img{
+            height: 150px;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .card .stars{
+            color: gold;
+            font-size: 1rem;
+            margin: 5px;
+
+        }
+        .card button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            }
+        .card button:hover {
+        background-color: #0056b3;
+        }
+    .card p {
+        font-size: 0.9rem;
+        margin: 5px 0;
+        color: #777;
+    }
+    .card .price {
+      font-size: 1.2rem;
+      color: #007bff;
+      margin: 10px 0;
+    }
+
+    </style>
+</head>
+<body>
+    <h2>Product card</h2>
+    <div id="cardContainer" class="card-container"></div>
+    <script>
+        const productData = [
+        {
+            "name": "Kavachprash 1kg",
+            "brand": "This Brand",
+            "price": "$1424.00",
+            "rating": 4,
+            "image": "https://product.indiashoppe.com/7470.png",
+            "buttonText": "Add to cart"
+        },
+        {
+            "name": "Vitamin C Chewable Tablets",
+            "brand": "That Brand",
+            "price": "$700.00",
+            "rating": 3,
+            "image": "https://product.indiashoppe.com/7680.png",
+            "buttonText": "Add to cart"
+        }
+        ];
+        const cardContainer = document.getElementById('cardContainer');
+
+        productData.forEach(product => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+
+        const generateStars = (rating) => {
+            const fullStars = rating;
+            return '★'.repeat(fullStars);
+        };
+
+
+
+    card.innerHTML = `
+            <img src="${product.image}">
+            <p>${product.brand}</p>
+            <h3>${product.name}</h3>
+            <div class="stars">${generateStars(product.rating)} (${product.rating})</div>
+            <p class="price">${product.price}</p>
+            <button>${product.buttonText}</button>
+        `;
+
+        cardContainer.appendChild(card);
+        });
+    </script>
+</body>
+</html>
