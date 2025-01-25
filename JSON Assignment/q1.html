@@ -1,0 +1,43 @@
+<!-- Q.1 Create Json using product {id,name,description, cost,qty}
+print each in text box on show button -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Product Details</h2>
+    <input type="text" id="id" placeholder="ID">
+    <br><br><br>
+    <input type="text" id="naam" placeholder="Name">
+    <br><br><br>
+    <input type="text" id="desc" placeholder="Description">
+    <br><br><br>
+    <input type="text" id="cost" placeholder="Cost">
+    <br><br><br>
+    <input type="text" id="qty" placeholder="Quantity">
+    <br><br><br>
+    <input type="button" value="Show" onclick="show()">
+
+
+    <script>
+        let products={
+            id:1,
+            name:"Pen",
+            description:"Ball Pen",
+            cost:10,
+            qty:100
+        }
+        function show(){
+            id.value=products.id;
+            naam.value=products.name;
+            desc.value=products.description;
+            cost.value=products.cost;
+            qty.value=products.qty;
+        }
+    </script>
+</body>
+</html>
