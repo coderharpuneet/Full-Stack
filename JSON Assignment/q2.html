@@ -1,0 +1,54 @@
+<!-- Q.2 student JSON {id,name,P,C,M show Total, per and div on page -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <h2>Student Details</h2>
+
+
+    <input type="text" id="id" placeholder="ID">
+    <br><br><br>
+    <input type="text" id="name" placeholder="Name">
+    <br><br><br>
+    <input type="text" id="phy" placeholder="Physics Marks">
+    <br><br><br>
+    <input type="text" id="chem" placeholder="Chemistry Marks">
+    <br><br><br>
+    <input type="text" id="maths" placeholder="Mathematics Marks">
+    <br><br><br>
+    <input type="text" id="total" placeholder="Total Marks">
+    <br><br><br>
+    <input type="text" id="per" placeholder="Percentage">
+    <br><br><br>
+    <input type="button" value="Show" onclick="show()">
+    
+
+
+
+    <script>
+        var student={
+            id:1,
+            name:'Harpuneet',
+            p:81,
+            c:95,
+            m:90
+        }
+        function show(){
+            
+            id.value=student.id;
+            name.value=student.name;
+            phy.value=student.p;
+            chem.value=student.c;
+            maths.value=student.m;
+            total.value=student.p+student.c+student.m;
+            per.value=(student.p+student.c+student.m)/3;
+
+        }
+
+    </script>
+ </body>
+ </html>
