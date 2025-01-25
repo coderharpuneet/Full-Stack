@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        select{
+            height: 200px;
+            width: 100px;
+        }
+        #mylist{
+            margin-left: 25px;
+        }
+    </style>
+</head>
+<body bgcolor="lightblue">
+    <h2>Customer Sales</h2>
+    
+    <hr width="300px" color="blue">
+    <label> Select Products</label> 
+    <label id="mylist"> My List</label> 
+    <br>
+    <select  id="shop" multiple>
+        <option  id="pen">Pen</option>
+        <option  id="powder">Powder</option>
+        <option  id="polish">Polish</option>
+    </select>
+
+
+    <select  id="customer" multiple>
+        
+    </select>
+    <input type="text" id="bill" placeholder="Your Bill" size="4">
+    <input type="text" id="count" placeholder="Count" size="4">
+    <br>
+    <input type="button" value=">" onclick="purchase()">
+    <input type="button" id="" value="<" onclick="remove()">
+
+
+
+    <script>
+        var b=0;
+        function purchase(){
+            var newItem=document.createElement("option");
+            newItem.text=shop.value;
+            customer.add(newItem);
+            if(newItem.text==='Pen') b+=10;
+            if(newItem.text==='Powder') b+=20;
+            if(newItem.text==='Polish') b+=30;
+            bill.value=b;
+            count.value=customer.length;
+        }
+
+        function remove(){
+            if(customer.value=='Pen'){
+                b-=10;
+
+            }
+            if(customer.value=='Powder'){
+                b-=20;
+                
+            }
+
+            if(customer.value=='Polish'){
+                b-=30;
+            }
+            bill.value=b;
+
+            customer.remove(customer.selectedIndex);
+            count.value=customer.length;
+        }
+    </script>
+</body>
+</html>
