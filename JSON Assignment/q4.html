@@ -1,0 +1,85 @@
+<!-- Q.4 Show country then State then City using Drop down (keep 3 values each country, each state, cities) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Address</h3>
+
+    Country: <select id="country" onchange="show_state()">
+        <option value="default" disabled>Select Country</option>
+    </select>
+
+    State: <select id="state" onchange="show_city()">
+        <option>Select state</option>
+    </select>
+
+    City: <select id="city">
+        <option>Select city</option>
+    </select>
+
+
+
+    <script>
+        window.onload=show_country();
+        function show_country(){
+            country.innerHTML="<option>Select Country</option>"
+            country.innerHTML+="<option value='india'>India</option><option value='pak'>Pakistan</option><option value='usa'>USA</option>"
+        }
+        function show_state(){
+            state.innerHTML="<option>Select State</option>"
+            if(country.value=="india"){
+                state.innerHTML+="<option value='panjab'>Panjab</option><option value='haryana'>Haryana</option><option value='maharashtra'>Maharashtra</option>"
+            }
+            else if(country.value=="pak"){
+                state.innerHTML+="<option value='punjab'>Punjab</option><option value='sindh'>Sindh</option><option value=' Khyber'>Khyber</option><option value=' Balochistan'>Balochistan</option>"
+            }
+            else if(country.value=="usa"){
+                state.innerHTML+="<option value='Alabama'>Alabama</option><option value='Florvaluea'>Florvaluea</option><option value='Hawaii'>Hawaii</option>"
+            }
+        }
+        function show_city(){
+            city.innerHTML="<option>Select City</option>"
+            if(country.value=="india"){
+                if(state.value=="panjab"){
+                    city.innerHTML+="<option value='ludhiana'>Ludhiana</option><option value='Ferozpur'>Ferozpur</option><option value='amritsar'>Amritsar</option>"
+                }
+                else if(state.value=='haryana'){
+                    city.innerHTML+="<option value='gurgaon'>Gurgaon</option><option value='farvalueabad'>Farvalueabad</option><option value='panipat'>Panipat</option>"
+                }
+                else if(state.value=='maharashtra'){
+                    city.innerHTML+="<option value='mumbai'>Mumbai</option><option value='pune'>Pune</option><option value='nagpur'>Nagpur</option>"
+                }
+            }
+            else if(country.value=="pak"){
+                if(state.value=="punjab"){
+                    city.innerHTML+="<option value='Gujranwala'>Gujranwala</option><option value=''>Faisalabad</option><option value='Lahore'>Lahore</option>"
+                }
+                else if(state.value=='sindh'){
+                    city.innerHTML+="<option value='kalimpong'>Kalimpong</option><option value='mahe'>Mahe</option><option value='patiala'>Patiala</option>"
+                }
+                else if(state.value=='Khyber'){
+                    city.innerHTML+="<option value='kandahar'>Kandahar</option><option value='baghlan'>Baghlan</option><option value='parwanas'>Parwanas</option>"
+                }
+                else if(state.value=='Balochistan'){
+                    city.innerHTML+="<option value='quetta'>Quetta</option><option value='zhob'>Zhob</option><option value='sibi'>Sibi</option>"
+                }
+            }
+            else if(country.value=="usa"){
+                if(state.value=="Alabama"){
+                    city.innerHTML+="<option value='Montgomery'>Montgomery</option><option value='Huntsville'>Huntsville</option><option value='Tuscaloosa'>Tuscaloosa</option>"
+                }
+                else if(state.value=="Florvaluea"){
+                    city.innerHTML+="<option value='Tallahassee'>Tallahassee</option><option value='Gainesville'>Gainesville</option><option value='Orlando'>Orlando</option>"
+                }
+                else if(state.value=="Hawaii"){
+                    city.innerHTML+="<option value='Honolulu'>Honolulu</option><option value='Kailua'>Kailua</option><option value='Pearl Harbor'>Pearl Harbor</option>"
+                }
+            }
+        }
+    </script>
+</body>
+</html>

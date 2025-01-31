@@ -22,32 +22,34 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-    <h2>Quiz</h2>
-    <hr>
-    <p id="ques"></p>
-    <br>
-    <input type="radio" name="q" id="opt1"><label id="l1"></label>
-    <br>
-    <input type="radio" name="q" id="opt2" ><label id="l2"></label>
-    <br>
-    <input type="radio" name="q" id="opt3"><label id="l3"></label>
-    <br>
-    <input type="radio" name="q" id="opt4"><label id="l4"></label>
+  <h2>Quiz</h2>
+  <hr>
+  <p id="ques"></p>
+  <br>
+  <input type="radio" name="q" id="opt1" onclick="check()"><label id="l1"></label>
+  <br>
+  <input type="radio" name="q" id="opt2" onclick="check()"><label id="l2"></label>
+  <br>
+  <input type="radio" name="q" id="opt3" onclick="check()"><label id="l3"></label>
+  <br>
+  <input type="radio" name="q" id="opt4" onclick="check()"><label id="l4"></label>
 
 
-    <br><br><br>
-    <input type="button" value="Check answer" onclick="check()">
-    <input type="button" value="Next" onclick="next()">
+  <br><br><br>
+  <input type="button" value="Check answer" onclick="check()">
+  <input type="button" value="Next" onclick="next()">
 
-    <p id="msg">Hello</p>
-    <script>
-        const questions = [
+  <p id="msg"></p>
+  <script>
+    const questions = [
       {
         question: "What is the capital of France?",
         options: ["Berlin", "Madrid", "Paris", "Rome"],
@@ -64,41 +66,81 @@
         answer: "William Shakespeare"
       }
     ];
-    var index=0;
-    ques.innerHTML=questions[index].question;
-    l1.innerHTML=questions[index].options[0];
-    l2.innerHTML=questions[index].options[1];
-    l3.innerHTML=questions[index].options[2];
-    l4.innerHTML=questions[index].options[3];
-    function next(){
-        index++;
-        ques.innerHTML=questions[index].question;
-        l1.innerHTML=questions[index].options[0];
-        l2.innerHTML=questions[index].options[1];
-        l3.innerHTML=questions[index].options[2];
-        l4.innerHTML=questions[index].options[3];
+    var index = 0;
+    var score = 0;
+    ques.innerHTML = questions[index].question;
+    l1.innerHTML = questions[index].options[0];
+    l2.innerHTML = questions[index].options[1];
+    l3.innerHTML = questions[index].options[2];
+    l4.innerHTML = questions[index].options[3];
+    if(opt1.checked || opt2.checked || opt3.checked || opt4.checked){
+      check();
     }
-    function check(){
-        
-        if(opt1.checked && l1.innerHTML===questions[index].answer ){
-            
-            msg.innerHTML="Correct Answer";
-        }
-    
-    
-        else if(opt2.checked && l2.innerHTML===questions[index].answer ){
-            msg.innerHTML="Correct Answer";}
-    
-        else if(opt3.checked && l3.innerHTML===questions[index].answer ){
-            msg.innerHTML="Correct Answer";}
-    
-        else if(opt4.checked && l4.innerHTML===questions[index].answer ){
-            msg.innerHTML="Correct Answer";}
-            else{
-                msg.innerHTML="Wrong Answer";
-            }
-        
+    function next() {
+      index++;
+      if (index == 3) alert(score);
+      if (opt1.checked) {
+        opt1.checked = false;
+        l1.style.color='black';
+      }
+      else if (opt2.checked) {
+        opt2.checked = false;
+        l2.style.color='black';
+      }
+      else if (opt3.checked) {
+        opt3.checked = false;
+        l3.style.color='black';
+      }
+      else if (opt4.checked) {
+        l4.style.color='black';
+        opt4.checked = false;
+      }
+      ques.innerHTML = questions[index].question;
+      l1.innerHTML = questions[index].options[0];
+      l2.innerHTML = questions[index].options[1];
+      l3.innerHTML = questions[index].options[2];
+      l4.innerHTML = questions[index].options[3];
+
+
     }
-    </script>
+    function check() {
+
+      if (opt1.checked && l1.innerHTML === questions[index].answer) {
+        l1.style.color='green';
+        msg.innerHTML = "Correct Answer";
+        score++;
+      }
+      else if (opt2.checked && l2.innerHTML === questions[index].answer) {
+        l2.style.color='green';
+        msg.innerHTML = "Correct Answer";
+        score++;
+      }
+      
+      else if (opt3.checked && l3.innerHTML === questions[index].answer) {
+        msg.innerHTML = "Correct Answer";
+        score++;
+        l3.style.color='green';
+      }
+      
+      else if (opt4.checked && l4.innerHTML === questions[index].answer) {
+        l4.style.color='green';
+        score++;
+        msg.innerHTML = "Correct Answer";
+      }
+      else {
+        msg.innerHTML = "Wrong Answer";
+        if(opt1.checked)
+          l1.style.color='red';
+        else if(opt2.checked)
+        l2.style.color='red';
+        else if(opt3.checked)
+        l3.style.color='red';
+        else if(opt4.checked)
+        l4.style.color='red';
+      }
+
+    }
+  </script>
 </body>
+
 </html>

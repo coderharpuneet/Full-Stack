@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nmerror{
+            font-size: 12px;
+            color: red;
+        }
+        #passerror{
+            font-size: 12px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <center>Validation</center>
+    </h1>
+    <label for="nm">Eneter user name</label>
+    <input type="text" id="uname" name="nm" placeholder="Enter name" size="8" onkeydown="nmcheck(event)">
+    <br><br>
+    <label for="pass">Enter password</label>
+    <input type="password" id="password" name="pass" placeholder="Enter password" size="8" onkeydown="passcheck(event)">
+    <div id="nmerror"></div>
+    <div id="passerror"></div>
+
+    <script>
+        function nmcheck(event){
+            if(event.key>='0' && event.key<='9'){
+                event.preventDefault();
+                nmerror.innerHTML="Name should not contain numbers";
+            }
+            
+            else if(uname.value.length<3){
+                nmerror.innerHTML="Name should be atleast 3 characters";
+            }
+            else{
+                nmerror.innerHTML="";
+            }
+        }
+        function passcheck(){
+            regex=/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/;
+            if(!regex.test(password.value)){
+                passerror.innerHTML="Password should contain atleast one uppercase letter, one lowercase letter, one number and be atleast 6 characters long";
+            }
+            else{
+                passerror.innerHTML="";
+            }
+        }
+    </script>
+</body>
+</html>

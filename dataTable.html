@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+
+</head>
+<body>
+    <h1><center>Student Enrolled</center></h1>
+    <input type="button" value="print" onclick="show()">
+    <script>
+        function show(){
+            const {jsPDF}=window.jspdf;
+            const doc=new jsPDF();
+            doc.text(80,20,"Student List");
+            const header=[["Rollno","Name","Subject","Class"]];
+            const data=[
+                ["1","John","Mathematics","9th"],
+                ["2","Jane","Science","10th"],
+                ["3","Tom","English","11th"],
+                ["4","Alice","Social Studies","12th"]
+            ];
+
+            doc.autoTable({
+                startY:40,
+                head:header,
+                body:data,
+                theme:'grid'
+            })
+            doc.save("studentList.pdf");
+        }
+    </script>
+</body>
+</html>

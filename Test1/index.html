@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1f1f1;
+        }
+        #card{
+            width: 500px;
+            height: 650px;
+            background-color: rgba(15,24,32,255);
+            color: #f1f1f1;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            border-radius: 10px;
+        }
+        #card form{
+            margin: 14px;;
+        }
+        ::placeholder{
+            color: #f1f1f1;
+        }
+        input[type="text"], input[type="email"], input[type="password"], select{
+            background-color: #979696;
+            border-radius: 5px;
+            height: 30px;
+        }
+        #signup{
+            background-color: #29ce8a;
+            color: #fff;
+            cursor: pointer;
+            transition: ease 0.3s;
+        }
+        #signup:hover{
+            background-color: #fff;
+            color: #29ce8a;
+        }
+        #already-acc{
+            background-color: transparent;
+            color: #fff;
+            cursor: pointer;
+            transition: ease 0.3s;
+        }
+        #already-acc:hover{
+            background-color: transparent;
+            color: #29ce8a;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <h2 id="create-acc" style="margin-left: 16px;">Create an Account</h2>
+        <p style="margin-left: 16px;">Required field may have an asterisk.</p>
+
+
+        <form action="">
+            <label id="fname">First Name *</label>
+            <label id="lname" style="margin-left: 127px;">Last Name *</label>
+            <br>
+            <input type="text" id="fname" placeholder="Fisrt Name" size="27" required>
+            <input type="text" id="fname" placeholder="Last Name" size="27" required>
+            <br><br>
+
+
+
+            <label for="email">Email *</label> <br>
+            <input type="email" id="email" placeholder="Email" required style="width: 95%;"> <br><br>
+
+
+
+            <label >Country *</label><br>
+            <select id="country" style="margin-right: 10px; width: 20%;">
+                <option value="+971">+971</option>
+                <option value="+91">+91</option>
+                <option value="+86">+86</option>
+                <option value="+1">+1</option>
+            </select>
+            <input type="text" id="number" placeholder="Enter your Number" required style="width: 70%;"> <br><br>
+
+
+
+            <label for="password">Password *</label><br>
+            <input type="password" id="password" placeholder="Enter your Password" required style="width: 95%;"><br><br>
+            <label >Confirm Password *</label>
+            <input type="password" id="con-password" placeholder="Confirm Password" required style="width: 95%;">
+            <br><br>
+            <input type="checkbox" id="tandc" style="background-color: transparent;">
+            <label>I certify that I am 18 years of age older, I agree to the <a href="#" style="color: #29ce8a;">User agreement</a>, and I have read the <a href="#" style="color: #29ce8a;">Privacy Policy</a></label>
+            <br><br>
+
+
+
+            <button id="signup" value="Sign up" style="width: 100%; height: 35px; ">Sign Up</button>
+            <br><br>
+            <button id="already-acc" value="Already have an Account" style="width: 100%; height: 35px;">Already have an Account</button>
+
+        </form>
+
+    </div>
+</body>
+</html>

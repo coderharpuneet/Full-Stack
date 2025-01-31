@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <h1><center>Download PDF</center></h1>
+    <input type="button" value="Download" onclick="donload_pdf()">
+
+
+
+    <script>
+        window.jsPDF=window.jspdf.jsPDF;
+        function donload_pdf(){
+            const doc=new jsPDF();
+            doc.setFontSize(20);
+            doc.setFont("arial","bold");
+            doc.setTextColor(0,0,255);
+            doc.text(10,50,"Hello sir") //left,top,message
+            doc.text(10,200,"Bye");
+
+            //draw lines
+            doc.setLineWidth(1);
+            doc.setDrawColor(255,255,0);
+            doc.line(10,70,200,70);//-------------
+
+            //Images
+            var img=new Image();
+            img.src="car1.jpg";
+            doc.addImage(img,'png',10,90,100,100)//left,top,height,width
+
+            //data table
+            doc.save("harpuneet.pdf");
+        }
+    </script>
+</body>
+</html>
