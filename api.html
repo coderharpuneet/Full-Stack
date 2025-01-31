@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>API Fetching</h1>
+    <p id="title">Product Name: </p>
+    <p id="price">Price: </p>
+
+    <script>
+        async function show(){
+            // const response=await fetch('https://dummyjson.com/products/1')
+            // const data=await response.json();
+            // console.log(data);
+
+
+            fetch('https://dummyjson.com/products/2')
+            .then(res => res.json())
+            // .then(console.log);
+            .then(data=>{
+                title.innerHTML+=data.title;
+                price.innerHTML+=data.price;
+            })
+        }
+        window.onload=show;
+    </script>
+</body>
+</html>
