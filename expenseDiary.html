@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"  />
+    <style>
+        #faplus{
+            cursor: pointer;
+            margin-left: 50px;
+        }
+        .expense{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Expense List</h1>
+    <h3>Your Fixed Amount</h3>
+    <input type="text" size="8" value="5000" readonly id="budget">
+    <input type="button" value="Process" onclick="process()">
+    <br><br><br><br><br>
+     <input type="text" id="t1" placeholder="Expense" class="expense" size="6">
+    <span id="faplus" onclick="show()"><i class="fa-solid fa-plus" aria-hidden="true"></i></span>
+
+
+    <script>
+        let counter=2;
+        function show(){
+            document.body.appendChild(document.createElement("br"));
+            new_text=document.createElement("input");
+            new_text.type="text";
+            new_text.id="t"+[counter++];
+            new_text.placeholder="Expense";
+            new_text.classList.add("expense");
+            new_text.size="6";
+            document.body.appendChild(new_text);
+        }
+        function process(){
+            all_entries=document.getElementsByClassName("expense")
+            sum=0;
+            for(i=0;i<all_entries.length;i++){
+                sum+=Number(all_entries[i].value);
+            }
+            alert(sum);
+        }
+    </script>
+</body>
+</html>
