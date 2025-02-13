@@ -1,0 +1,28 @@
+Q.4. Question Type: ‘Basics’                          (5Marks)
+  a = 10;   b = 5;  c = 8;  d = 3;
+const problems = [
+  {
+    problem: Evaluate (${a} + ${b}++) * ${c} - ${d}--,
+    answer: (a + b++) * c - d--
+  },
+  {
+    problem: Compute (${a}-- * ${c}) / (${b} + ${d}++),
+    answer: (a-- * c) / (b + d++)
+  },
+  {
+    problem: Find the result of (${c}++ - ${d}) * ${a} + ${b}++,
+    answer: (c++ - d) * a + b++
+  },
+  {
+    problem: Calculate (${a} + ${b}++) / (${c}-- + ${d}),
+    answer: (a + b++) / (c-- + d)
+  },
+  {
+    problem: Solve (${c}++ - (${a}-- / ${b})) * ${d},
+    answer: (c++ - (a-- / b)) * d
+  }
+];
+
+
+
+Answer : 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js" ></script>
+</head>
+<body>
+    <canvas id="myChart" style="width: 90%; max-width: 600px; height: 400px;"></canvas>
+
+
+    <script>
+      var xvalues=["End of 5 overs", "End of 10 overs","End of 15 overs","End of 20 overs"];
+      var lineColor=["orange","blue"];
+      new Chart("myChart",{
+        type:"line",
+        data:{
+          labels:xvalues,
+          datasets:[{
+            label:"Team A",
+            data:[45, 110,120,180],
+            borderColor:lineColor[0],
+            fill: false
+          },
+        {
+          label:"Team B",
+          data:[50, 75,130,181],
+          borderColor:lineColor[1],
+          fill: false
+        }]
+        },
+        options:{
+          title:{
+            display:true,
+            text:"Cricket Score"
+          }
+        }
+      })
+    </script>
+</body>
+</html>

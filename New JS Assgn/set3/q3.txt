@@ -1,0 +1,9 @@
+Q.3. Question Type: ‘Basics’ 
+Read the Expression, 
+a = -5;
+k = (a++, ++a);
+x= -k / -a
+What is value of ‘x’   
+
+
+Answer 0

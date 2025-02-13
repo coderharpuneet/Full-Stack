@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"  />
+    <style>
+        #user-input{
+            box-shadow: 5px 5px 5px  gray;
+            width: auto;
+            margin-right: 10px;
+            padding: 10px;
+            height: 40px;
+            border: 0px solid red;
+            ;
+        }
+        input{
+            border: 1px solid black;
+
+
+        }
+        .inline{
+            display: inline-block;
+        }
+        #btn{
+            box-shadow: 5px 5px 5px gray;
+            color: aqua;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+            background-color: brown;
+        }
+        #image{
+            font-size: 20px;
+            font-weight: bold;
+            padding: 5px;
+            display: inline-block;
+            user-select: none;
+
+        }
+    </style>
+</head>
+<body>
+    <body onload="TASK1()">
+        <div id="user-input" class="inline">
+            <input type="text" id="submit" placeholder="Enter Captcha">
+        </div>
+        <div class="inline">
+            <i class="fas fa-sync" onclick="TASK1()" style="cursor: pointer;"></i>
+        </div>
+        <div id="image" class="inline"></div>
+        <input type="submit" id="btn" value="Verify" onclick="TASK2()"></input>
+        <p id="key"></p>
+
+
+
+        <script>
+            let captcha;
+            function TASK1(){
+                captcha=document.getElementById("image");
+                let unique="";
+                let list="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                for(i=0;i<5;i++){
+                    unique+=list.charAt(Math.random()*list.length);
+                }
+                captcha.innerHTML=unique;
+            }
+            function TASK2(){
+                let user_input=submit.value;
+                if(user_input===captcha.innerHTML){
+                    key.innerHTML="<span style='color: green;'>Matching</span>"
+                }
+                else{
+                    key.innerHTML="<span style='color: red;'>Not Matching</span>"
+                    TASK1();
+                }
+            }
+        </script>
+    </body>
+</body>
+</html>

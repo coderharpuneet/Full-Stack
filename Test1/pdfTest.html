@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+
+</head>
+<body>
+    <h1>
+        <center>Download PDF</center>
+    </h1>
+    <input type="button" value="Download" onclick="donload_pdf()">
+
+
+    <script>
+        window.jsPDF=window.jspdf.jsPDF;
+        function donload_pdf(){
+            const doc=new jsPDF();
+            doc.setFontSize(20);
+            doc.setFont("arial","bold");
+            doc.setTextColor(0,0,0);
+            doc.text(70,20,"PUNJAB UNIVERSITY") //left,top,message
+            doc.text(30,30,"Name: Deepshikha");
+            doc.text(30,60,"Roll Number: 2341853");
+            doc.text(30,80,"Semester: 4");
+            doc.txt(30,100,"Center of exam:GGSD sector 32 Chandigarh");
+
+            
+
+
+
+
+            doc.save("test.pdf");
+        }
+    </script>
+</body>
+</html>

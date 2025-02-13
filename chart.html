@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charts</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js" ></script>
+</head>
+<body>
+    <canvas id="myChart" style="width: 90%; max-width: 600px; height: 400px;"></canvas>
+
+
+    <script>
+        var xvalue=["USA","CANADA","JAPAN","INDIA"]
+        var yvalue=[44,55,66,77,88];
+        var barcolor=["red","green","yellow","orange","brown"];
+        new Chart("myChart",{
+            type:"bar",
+            data:{
+                labels:xvalue,
+                datasets:[{
+                    label:"New Chart",
+                    backgroundColor:barcolor,
+                    data:yvalue
+                }]
+            },
+            options:{
+                title:{
+                    display:true,
+                    text:"World Economic Growth 2021"
+                }
+            }
+        })
+    </script>
+</body>
+</html>
