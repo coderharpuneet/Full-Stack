@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+    <style>
+        input{
+            height: 25px;
+            width: 50px;
+            margin: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>O T P</h1>
+    <input id="otp1" type="text" max="1" oninput="movetoNext(this,'otp2')">
+    <input id="otp2" type="text" max="1" oninput="movetoNext(this,'otp3')">
+    <input id="otp3" type="text" max="1" oninput="movetoNext(this,'otp4')">
+    <input id="otp4" type="text" max="1" oninput="movetoNext(this,'ans')">
+    <p id="ans">Result here...</p>
+    <script>
+        var res='';
+        function movetoNext(current,nextId){
+            if(current.value.length==1) document.getElementById(nextId).focus();
+            res='';
+            for(let a=1;a<5;a++)
+                res+=document.getElementById("otp"+a).value;
+                ans.innerHTML=res;
+        }
+    </script>
+</body>
+</html>
