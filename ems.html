@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS</title>
+    <style>
+        .disable_back{
+            background-color: red;
+            color: white;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <center>Employee Salary</center>
+    </h1>
+    <hr><!--style edit-->
+    <p id="srNo">Entry</p>
+    <div id="entryTable">
+        <table border="2" cellpadding="10px" align="center">
+            <tr>
+                <td><label>Name: </label></td>
+                <td><input id="empname" type="text" id="name" placeholder="Enter your name" required></td>
+            </tr>
+            <tr>
+                <td><label>Post: </label></td>
+                <td><select id="post" required>
+                    <option value="Data Manager">Data Manager</option>
+                    <option value="Frontend">Frontend</option>
+                    <option value="Backend">Backend</option>
+                    <option value="Marketing">Marketing</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label>Salary: </label></td>
+                <td><input type="text" id="salary" placeholder="Enter your salary" required> </td>
+            </tr>
+    
+    
+            <tr>
+                <td><input type="button" value="Back" onclick="back()" id="back" ></td>
+                <td><input type="button" value="Next" onclick="next()"></td>
+            </tr>
+        </table>
+    </div>
+    <!--Maximum 5 employees allowed,Manage enable disable back next-->
+    <hr>
+    <h1>
+        <center>Basic Operations</center>
+    </h1>
+    <button onclick="showAll()">Show All</button><!--New window mein window.open command-->
+    <button onclick="salarySum()">Salary Sum</button>
+    <button onclick="highestSalary()">Highest Salary</button>
+    <button onclick="salarySort()">Salary Sort</button>
+    <button>Name Sort</button>
+    <!--Input in input box (user ek number daalega aur woh entry dikhaani hai)-->
+    <p id="res"></p>
+    
+
+
+    <script>
+        const info=[
+            {empname:"", post:"", salary:0},
+            {empname:"", post:"", salary:0},
+            {empname:"", post:"", salary:0},
+            {empname:"", post:"", salary:0},
+            {empname:"", post:"", salary:0}
+        ]
+        let empNo=0;
+        function next(){
+            info[empNo].empname=empname.value;
+            info[empNo].post=post.value;
+            info[empNo].salary=salary.value;
+            if(empNo<4){
+                empNo++;
+                empname.value='';
+                post.value='';
+                salary.value='';
+            }
+            else{
+                entryTable.innerHTML='Maximum employees reached';
+            }
+        }
+
+        function back(){
+            if(empNo>0){
+                empNo--;
+                empname.value=info[empNo].empname;
+                post.value=info[empNo].post;
+                salary.value=info[empNo].salary;
+                document.getElementById('back').classList.remove('disable_back');
+            }
+            else{
+                document.getElementById('back').classList.add('disable_back');
+            }
+        }
+
+        function showAll(){
+
+        }
+
+
+
+
+        function salarySum(){
+            let sum=0; 
+            for(let i=0;i<info.length;i++){
+                sum+=parseInt(info[i].salary);
+            }
+            res.innerHTML='Salary Sum = '+sum;
+        }
+
+        function highestSalary(){
+            let max=parseInt(info[0].salary);
+            for(let i=1;i<info.length;i++){
+                if(parseInt(info[i].salary)>max){
+                    max=parseInt(info[i].salary);
+                }
+            }
+            res.innerHTML='Highest Salary = '+max;
+        }
+
+        function salarySort(){
+
+        }
+    </script>
+
+</body>
+</html>
