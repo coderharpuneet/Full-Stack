@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minor Concepts</title>
+    <style>
+        p {
+            font-size: 10px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <center>Examples</center>
+    </h1>
+    <p id="ans1" onclick="show1()">There</p>
+    <p id="ans2" onclick="show2()">This</p>
+    <p id="ans3" onclick="show3()">That</p>
+    <p id="ans4" onclick="show4()">Those</p>
+    <p id="ans5" onclick="this.innerHTML=show5(6)">Then</p>
+    <script>
+        var x = 10;
+        function show1() {
+            var x = 100;
+            ans1.innerHTML = "x is " + x;
+            if (true) {
+                var a = 10;//Function Scope
+                let b = 20;//Block Scope
+            }
+            console.log(a);
+            console.log(b);
+        }
+        function show2() {
+            ans2.innerHTML = "x is " + x;
+        }
+
+        function show3() {
+            if (x === '10') ans3.innnerHTML = "True"; // working of == and ===
+            else ans3.innerHTML = "False";
+            console.log(typeof ('10'));
+            // alert("Task Done");
+            //In JavaScript, DOM updates (like setting innerHTML) are not applied immediately. Instead,
+            //  they are queued for rendering after the function execution completes. 
+            //  However, alert(z) is a blocking operation, so it pauses execution before the browser gets a chance to update the DOM
+
+            setTimeout(()=>{ //Solution 
+                alert("Task Done");
+            },100);
+        }
+
+        function show4(){
+            var x=20,y=4;
+            var z=x/++y;
+            ans4.innerHTML="z is "+z;
+            var x=20,y=4;
+            ans4.innerHTML="Ans is "
+        }
+
+        //arrow function
+        const show5=(t)=>{
+            return t*t;
+        }
+    </script>
+</body>
+
+</html>
