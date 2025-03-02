@@ -1,0 +1,40 @@
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.card{
+  width: 400px;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  padding-right: 20px !important;
+  
+}
+input[type="text"]{
+  margin-right: 10px;
+  width: 100%;
+  height: 25px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid black ;
+  border-radius: 5px;
+}
+button{
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  height: 40px;
+  cursor: pointer;
+}
+.signin{
+  background-color: #d63175;
+}
+.createAccount{
+  bsckground-color: rgba(238,231,219,255);
+}

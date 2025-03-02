@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+//Input N number and print square of it.
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+
+
+  const [number,setNum]=useState(0);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1><center>Square of a number</center></h1>
+      <input type="text" placeholder='Enter the number' onChange={(e)=>setNum(e.target.value*e.target.value)}/>
+      <br/>
+      <br/>
+      <button>Submit</button>
+      <h1>{number}</h1>
     </div>
   );
 }

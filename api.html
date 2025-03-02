@@ -17,7 +17,8 @@
 
 
             fetch('https://dummyjson.com/products/2')
-            .then(res => res.json())
+            .then(res => res.json());
+            
             // .then(console.log);
             .then(data=>{
                 title.innerHTML+=data.title;

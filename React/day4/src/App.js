@@ -1,23 +1,32 @@
+// Customer NamedNodeMap, Product name,Price Quantity,Bill with 10% discount, Net,layout in table
 import logo from './logo.svg';
 import './App.css';
+import Info from './components/Info';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1><center>Shopping Bill</center></h1>
+      <table border="2" style={{marginLeft:'50px'}}>
+        <tr>
+          <th>Customer Name</th>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Bill</th>
+          <th>Discount</th>
+        </tr>
+        <tr>
+          <td><input type="text" placeholder="Customer Name"/></td>
+          <td><input type="text" placeholder="Product Name"/></td>
+          <td><input type="text" placeholder="Price"/></td>
+          <td><input type="text" placeholder="Quantity"/></td>
+          <td></td>
+          <td></td>
+          <td></td>
+
+        </tr>
+      </table>
     </div>
   );
 }
